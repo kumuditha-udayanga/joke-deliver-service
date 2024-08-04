@@ -1,6 +1,7 @@
 import { pool } from "../db/connection.js";
 
 
+// create joke
 export const createJoke = async(req, res) => {
     try {
         const { joke, type } = req.body;
@@ -19,13 +20,13 @@ export const createJoke = async(req, res) => {
     }
 };
 
-// @return random joke based on the type
+// get random joke based on the type
 export const getRandomJokeFromType = async(req, res) => {
     try {
-        const { type } = req.body;
+        const { id } = req.params;
         let query = `SELECT * FROM jokes WHERE type_id=? ORDER BY RAND() LIMIT 1`
         
-        const [rows] = await pool.query(query, [type]);
+        const [rows] = await pool.query(query, [id]);
 
         if (!rows.length) {
             return res.status(204).json({message: "empty list"});

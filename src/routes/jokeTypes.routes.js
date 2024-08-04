@@ -4,4 +4,5 @@ import { createJokeType, getJokeTypes } from "../controllers/jokeTypes.controlle
 export const jokeTypeRoutes = express.Router();
 
 jokeTypeRoutes.route("/").post(createJokeType);
+
 jokeTypeRoutes.route("/").get(getJokeTypes);

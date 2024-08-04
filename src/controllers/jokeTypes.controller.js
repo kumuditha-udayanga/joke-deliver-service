@@ -1,6 +1,6 @@
 import { pool } from "../db/connection.js";
 
-
+// create  joke type
 export const createJokeType = async(req, res) => {
     try {
         const { type } = req.body;
@@ -19,7 +19,7 @@ export const createJokeType = async(req, res) => {
     }
 };
 
-// @return add joke types (todo order with date latest first)
+// get joke types 
 export const getJokeTypes = async(req, res) => {
     try {
         const { type } = req.body;

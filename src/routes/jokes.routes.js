@@ -4,4 +4,5 @@ import { createJoke, getRandomJokeFromType } from "../controllers/jokes.controll
 export const jokeRoutes = express.Router();
 
 jokeRoutes.route("/").post(createJoke);
-jokeRoutes.route("/").get(getRandomJokeFromType);
+
+jokeRoutes.route("/:id").get(getRandomJokeFromType);
