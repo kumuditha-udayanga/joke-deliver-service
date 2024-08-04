@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -15,16 +16,20 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "mysql": "^2.18.1"
+    "mysql2": "^3.11.0"
   },
   "devDependencies": {
     "eslint": "^9.8.0",
     "globals": "^15.9.0",
     "husky": "^8.0.0",
     "lint-staged": "^15.2.7",
+    "nodemon": "^3.1.4",
     "prettier": "^3.3.3"
   },
   "lint-staged": {
-    "*.js": ["prettier", "eslint"]
+    "*.js": [
+      "prettier",
+      "eslint"
+    ]
   }
 }
